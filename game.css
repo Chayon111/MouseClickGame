@@ -7,6 +7,15 @@
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#gameFrame{
+  display: none;
+    position: absolute;
+    top: 16%;
+    left: 23%;
+    width: 50vw;
+    height: 70vh;
 }
 #circle {
     box-shadow: 0px 0px 8px #fcfcfc;
@@ -18,20 +27,26 @@
 
   #msg {
     position: absolute;
-    left: 45%!important;
+    left: 43%!important;
   }
   #winLosMsg{
+    /* box-shadow: 0px 0px 8px #fcfcfc; */
      position: absolute;
      top: 0!important;
-     left: 45%!important;
+     left: 43%!important;
   }
 
   #gameBoard {
+    box-shadow: 0px 0px 8px #fcfcfc;
     position: relative;
     width: 100vw;
     height: 70vh;
     background-color: black;
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 50px;
     opacity: 0.7;
+  }
+
+  .Shadow{
+    box-shadow: 0px 0px 8px #fcfcfc;
   }

@@ -7,10 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let gameBoard = document.getElementById('gameBoard');
     let newgame = document.getElementById('newgame');
     let bgImage = document.getElementById("bgImage");
+    let misClicked = document.getElementById("Misclicked");
+    let sureClicked = document.getElementById("Sureclicked");
+    let gameRuleBtn = document.getElementById("gameRuleBtn");
+    let gameFrame = document.getElementById("gameFrame");
 
     let scoreVal = 0;
     let mistakeCounter = 0;
     const MAX_MISTAKES = 3;
+    let misClickCount = 0;
+    let correctClickCount = 0;
 
     // for game off
     let gameActive = true;
@@ -33,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         getRandomPosition();
       }
-
+      // for 3 mistakeCounter
       if (points === -10) {
         mistakeCounter++;
         if (mistakeCounter >= MAX_MISTAKES) {
@@ -118,8 +124,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (clickedShift === currentShift) {
         if (clickedShift === "Click Left") {
           updateScore(10);
+          correctClickCount++
+          sureClicked.textContent = correctClickCount;
         } else {
           updateScore(-10);
+          misClickCount++
+          misClicked.textContent = misClickCount;
         }
       }
     }
@@ -132,8 +142,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (clickedShift === currentShift) {
         if (clickedShift === "Click Right") {
           updateScore(10);
+          correctClickCount++
+          sureClicked.textContent = correctClickCount;
         } else {
           updateScore(-10);
+          misClickCount++
+          misClicked.textContent = misClickCount;
         }
       }
     }
@@ -160,10 +174,18 @@ document.addEventListener('DOMContentLoaded', function () {
     location.reload();
   }
 
+   // For show/hide game rules
+  let showGameRules = false; 
+  function toggleRules() {
+    showGameRules = !showGameRules; // Toggle the flag
+    gameFrame.style.display = showGameRules ? "block" : "none";
+  }
     // Add the event listeners to the circle
     circle.addEventListener("click", handleClick);
     circle.addEventListener("contextmenu", handleContextMenu);
     newgame.addEventListener("click", newgameStart);
+    gameRuleBtn.addEventListener("click", toggleRules);
+
 
     getRandomPosition();
   });

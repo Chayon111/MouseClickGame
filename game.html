@@ -18,11 +18,17 @@
 <body>
   <div id="bgImage">
     <div class="d-flex justify-content-between  ">
-      <h1 class="m-5 mt-1 bg-black text-white text-center  p-3 w-25 rounded-3 fw-bold opacity-75 ">Your Score: <span id="score">0</span></h1>
-      <button id="newgame" class="btn btn-primary rounded-3 me-5 mt-1 w-25 fs-1 h-25 fw-bold opacity-50">New Game</button>
+      <h1 class="Shadow m-5 mb-3 mt-1 bg-black text-white text-center  p-3 w-25 rounded-3 fw-bold opacity-75 ">Your Score: <span id="score">0</span></h1>
+      <button id="gameRuleBtn" class="Shadow btn btn-warning fw-bold rounded-3 h-25 mt-1">Game Rules</button>
+      <iframe id="gameFrame" src="rules.html" title="Game Rules" class="Shadow"></iframe>
+      <button id="newgame" class="Shadow btn btn-primary rounded-3 me-5 mt-1 w-25 fs-1 h-25 fw-bold opacity-50">New Game</button>
     </div>
     <h1 id="msg" class="text-center mt-5 p-3 rounded-3 fw-bold"> </h1>
-    <h1 id="winLosMsg" class="text-center mt-5 p-4 rounded-3 fw-bold"> </h1>
+    <h1 id="winLosMsg" class="text-center mt-5 p-4 rounded-3 fw-bold"></h1>
+    <div class="d-flex justify-content-around text-white">
+      <h2 class="Shadow text-bg-danger p-1 opacity-75 rounded-3">Misclicked : <span id="Misclicked" class="pe-1">0</span></h2>
+      <h2 class="Shadow text-bg-success p-1 opacity-75 rounded-3">Sureclicked : <span id="Sureclicked" class="pe-1">0</span></h2>
+    </div>
     <div id="gameBoard" class="container rounded-3 ">
       <div id="circle" class="p-5 text-center rounded-circle d-flex align-items-center"
         style="width: 150px; height: 150px;">
